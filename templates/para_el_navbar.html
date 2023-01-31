@@ -1,0 +1,15 @@
+<!--cuando quiera usar un link registrado en la lista de urls uso static para conseguirlo:
+                    href="{% url 'Home' %}"
+                el nombre entre comillas es el campo "name" de la url registrada en urls (CASE SENSITIVE)-->
+
+                <!-- cuando quiera agregar una clase "active" a elementos de menu correspondientes a la pagina que estoy visitando
+                <li class="nav-item active px-lg-4">
+                <li class="nav-item px-lg-4">
+                <li class="nav-item px-lg-4">
+                
+                el siguiente condicional verifica si la direccion en la que estás es igual a la que tienes escrita (en este caso es el home sin direccion)
+                {% if request.path == '/' %}active{% endif %}
+                esta linea va directo en la clase
+
+                <li class="nav-item {% if request.path == '/' %}active{% endif %} px-lg-4">    
+                -->

@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}lista de ejercicios{% endblock title %}
+
+{% block content %}
+<div id="contenido" class="container">
+  <div class="row">
+    <div class="col-6">
+      <div class="row h-100">
+        <h4>Sales & purchases by department.</h4>
+        <div class="col graph-container">
+          <canvas id="pie-chart" class="col"></canvas>
+        </div>
+      </div>  
+    </div>
+    <div class="col-6">
+      <div class="row">
+        <div class="col">
+          <h4>Sales & purchases by department.</h4>
+          <br>
+          <div id="table-chart">{{ transaction | safe }}</div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <h4>Sales & purchases by department.</h4>
+        <br>
+        <div class="col graph-container">
+          <canvas id="bar-chart" class="col"></canvas>
+        </div>
+      </div>      
+    </div> 
+  </div>
+</div>
+
+<script>
+    var config = {
+      type: 'bar',
+      data: {
+        datasets: [
+          {
+            data: {{ data_sale | safe }},
+            backgroundColor: ['#7EDDDB', '#9EE5E4', '#AEEAE9', '#BFEEED', '#DFF6F6', '#EFFBFB', '#FFFFFF'],
+            label: 'Sales',
+          },
+          {
+            data: {{ data_purchase | safe }},
+            backgroundColor: ['#E94A35', '#ED6B5A', '#EF7B6C', '#F18C7E', '#F5ADA3', '#F7BDB6', '#F9CEC8'],
+            label: 'Purchases',
+          }
+        ],
+        labels: {{ labels | safe }},
+      },
+      options: {
+        responsive: true
+      }
+    };
+
+    var config2 = {
+      type: 'doughnut',
+      data: {
+        datasets: [
+          {
+            data: {{ data_sale | safe }},
+            backgroundColor: ['#ed6a5a', '#F4F1BB', '#9bc1bc', '#e6ebe0', '#36c9c6', '#F1B278', '#76CC8E', '#B99DC0'],
+            label: 'Sales',
+          },
+          {
+            data: {{ data_purchase | safe }},
+            backgroundColor: ['#ed6a5a', '#F4F1BB', '#9bc1bc', '#e6ebe0', '#36c9c6', '#F1B278', '#76CC8E', '#B99DC0'],
+            label: 'Purchases',
+          }
+        ],
+        labels: {{ labels | safe }},
+      },
+      options: {
+        responsive: true
+      }
+    };
+
+    window.onload = function() {
+      var ctx = document.getElementById('bar-chart').getContext('2d');
+      window.myPie = new Chart(ctx, config);
+      
+      var ctx2 = document.getElementById('pie-chart').getContext('2d');
+      window.myBar = new Chart(ctx2, config2);
+    };
+</script>
+{% endblock content %}

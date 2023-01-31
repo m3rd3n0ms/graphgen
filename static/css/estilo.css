@@ -1,0 +1,74 @@
+body{
+    background-color:#EDEDED;
+    padding-top:80px!important;
+}
+
+#botonera{
+    background-color:#262626;
+    border-radius:32px;
+    padding:8px;
+}
+#botonera .btn{
+    width:48px;height:48px;
+    padding:0;margin:0;
+}
+
+.filter-btn{
+    border-radius:50px;
+    width:72px;height:72px;
+}
+
+#botonera .btn img{
+    width:24px;height:24px;
+}
+.svg-white{
+    filter: invert(97%) sepia(0%) saturate(7487%) hue-rotate(126deg) brightness(111%) contrast(100%);
+}
+.drop {
+    filter: drop-shadow(5px 5px 15px rgba(0,0,0,0.3));
+}
+#barra-top{
+    background-color: rgba(0,0,0,0.1);
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+    z-index: 5;
+}
+#barra-top .navbar-text{
+    margin:0;
+    font-size:12px;
+}
+
+
+.graph-container{
+    padding:32px;
+}
+#table-chart table thead tr th:nth-child(1),
+#table-chart table tbody tr th:nth-child(1){
+    display:none;
+}
+
+#table-chart table{
+    background-color:white;
+    border:none;
+    border-radius:8px;
+    overflow:hidden;
+}
+#table-chart thead{
+    background-color:#BBBBBB;
+}
+#table-chart table tr{
+    text-align:start!important;
+}
+#table-chart table th, 
+#table-chart table td{
+    padding:4px 16px;
+}
+#table-chart tbody tr:last-child{
+    font-weight:bold;
+}
+
+#contenido{
+    height:90vh;
+}
+.h-100{
+    height:100%;
+}

@@ -1,0 +1,20 @@
+{% load static %}
+<nav class="navbar navbar-default fixed-bottom">
+    <div class="container">
+        <button type="button" class="btn filter-btn bg-light" aria-label="Filter">
+            <img class="svg-primary" src = '{% static "img/ico_filter.svg" %}' alt="Filter button"/>
+        </button>
+        <div id="botonera" class="drop">
+            <button type="button" class="btn">
+                <img class="svg-white" src = '{% static "img/ico-bars.svg" %}' alt="Bar chart button"/>
+            </button>    
+            <button type="button" class="btn">
+                <img class="svg-white" src = '{% static "img/ico-pie.svg" %}' alt="Pie chart button"/>
+            </button>    
+            <button type="button" class="btn">
+                <img class="svg-white" src = '{% static "img/ico-table.svg" %}' alt="Table chart button"/>
+            </button>
+        </div>      
+    </div>
+</nav>
+    

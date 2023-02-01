@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-q59(b_+bhiyc009sis_!bnsc&te-77go3e$)$!nwzrfn9))8%7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['graphgen-production.up.railway.app']
+ALLOWED_HOSTS = ['graphgen-production.up.railway.app', 'localhost']
 
 
 # Application definition

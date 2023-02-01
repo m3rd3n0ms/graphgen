@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'graph01',
+    'whitenoise.runserver_nostatic'
 ]
 
 MIDDLEWARE = [
@@ -50,6 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
 
 ROOT_URLCONF = 'GraphGenv01.urls'
@@ -125,6 +127,8 @@ STATICFILES_DIRS = [
 
 STATIC_ROOT = os.path.join(os.path.dirname(
     BASE_DIR), "static_cdn", "static_root")
+
+STATICFILES_STORAGE="whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(os.path.dirname(
